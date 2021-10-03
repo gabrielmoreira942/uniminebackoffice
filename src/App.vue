@@ -1,10 +1,6 @@
-<template>
+<template  v-if="notIsLogin">
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -27,29 +23,52 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+      <v-btn v-if="notIsLogin"
+        @click="logout()"
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+        <span class="mr-2">Logout</span>
+        <v-icon>mdi-logout</v-icon>
       </v-btn>
     </v-app-bar>
-
+    
     <v-main>
-      <router-view/>
+      <router-view />
     </v-main>
+    <div class="sidebar" v-if="notIsLogin">
+      <SideBar/>
+    </div>
   </v-app>
 </template>
 
 <script>
-
+import SideBar from './components/SideBar.vue'
 export default {
-  name: 'App',
+  components:{
+    SideBar
+  },
+  name: "App",
 
   data: () => ({
     //
   }),
+
+  created() {
+    if(this.$route.path === '/'){
+
+       this.$router.push("login");
+    }
+  },
+  methods:{
+    logout(){
+      this.$router.push('login');
+    }
+  },
+  computed: {
+    notIsLogin() {
+      return this.$route.name !== "Login";
+    },
+  },
 };
 </script>

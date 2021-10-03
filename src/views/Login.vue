@@ -1,5 +1,45 @@
 <template>
-  <div class="about">
-    <h1>This is an Login page</h1>
+  <div>
+    <v-btn @click="home()">This is an Login page</v-btn>
+      <v-form>
+    <v-container>
+      <v-row>
+        <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-text-field
+            v-model="first"
+            label="First Name"
+            outlined
+          ></v-text-field>
+        </v-col>
+
+        <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-text-field
+            v-model="last"
+            label="Last Name"
+            outlined
+          ></v-text-field>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-form>
   </div>
+
 </template>
+
+<script>
+export default {
+  
+
+  methods: {
+    home(){
+      this.$router.push('home')
+    }
+  }
+}
+</script>
