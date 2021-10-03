@@ -1,6 +1,5 @@
 <template>
   <div>
-    <v-btn @click="home()">This is an Login page</v-btn>
     <v-app>
       <v-content>
         <v-container class="fill-height" fluid>
@@ -27,9 +26,11 @@
                             label="Senha"
                             name="Senha"
                             prepend-icon="mdi-lock"
+                            color="red"
                             >
 
                             </v-text-field>
+                            <v-btn @click="home()">Login</v-btn>
                           </v-form>
                          <!-- <div class="text-center" mt-4> -->
                            <!-- <v-btn class="mx-2"
