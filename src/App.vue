@@ -1,22 +1,15 @@
 <template  v-if="notIsLogin">
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="gray"  v-if="notIsLogin">
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    
 
         <v-img
           alt="Vuetify Name"
           class="shrink mt-1 hidden-sm-and-down"
           contain
           min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
+          src="./assets/logo_Unimine.png"
           width="100"
         />
       </div>
@@ -27,6 +20,7 @@
         @click="logout()"
         target="_blank"
         text
+        color="red"
       >
         <span class="mr-2">Logout</span>
         <v-icon>mdi-logout</v-icon>
@@ -67,7 +61,7 @@ export default {
   },
   computed: {
     notIsLogin() {
-      return this.$route.name !== "Login";
+      return this.$route.name !== "Login" && this.$route.name !== "Register";
     },
   },
 };

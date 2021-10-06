@@ -1,107 +1,66 @@
 <template>
-  <div>
-    <v-app>
-      <v-content>
-        <v-container class="fill-height" fluid>
-          <v-row align="center" justify="center">
-            <v-col cols="12" sm="8" md="8">
-              <v-card class="elevation-12">
-                <v-window v-model="step">
-                  <v-window-item :value="1">
-                    <v-row>
-                    <v-col cols="12" md="8">
-                       <v-card-text class="mt-12">
-                          <h1 class="text-center display-2 red--text text--accent-3">Bem vindo ao Unimine!</h1>
-                          <h4 class="text-center">Faça seu Login</h4>
-                          <v-form>
-                            <v-text-field
-                            label="Email"
-                            name="Email"
-                            prepend-icon="mdi-email"
-                            type="text"
-                            color="red"
-                            >
-                            </v-text-field>
-                            <v-text-field
-                            label="Senha"
-                            name="Senha"
-                            prepend-icon="mdi-lock"
-                            color="red"
-                            >
-
-                            </v-text-field>
-                            <v-btn @click="home()">Login</v-btn>
-                          </v-form>
-                         <!-- <div class="text-center" mt-4> -->
-                           <!-- <v-btn class="mx-2"
-                            fab color="black"
-                            outlined
-                            >
-                            <v-icon>mdi-plus</v-icon>
-                            </v-btn> -->
-                         <!-- </div> -->
-                       </v-card-text>
-                      </v-col>
-                       <v-col cols="12" md="4"></v-col>
-                    </v-row>
-                  </v-window-item>
-                  <v-window-item :value="2"></v-window-item>
-                </v-window>       
-         
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-content>
-    </v-app>
-
-      <!-- <v-form>
-    <v-container>
-      <v-row>
-        <v-col
-          cols="12"
-          sm="6"
-        >
+  <v-app >
+    <v-main>
+      <v-card width="500px" class="mx-auto  mt-10">
+        <div align="center">
+          <img 
+          src="../assets/logo_Unimine.png" 
+          width="200px" 
+          
+          />
+        </div>
+        <!-- <v-card-title>Login</v-card-title> -->
+      
+        <v-card-text>
           <v-text-field
-            v-model="first"
-            label="First Name"
-            outlined
-          ></v-text-field>
-        </v-col>
-
-        <v-col
-          cols="12"
-          sm="6"
-        >
+            label="Username"
+            prepend-icon="mdi-account-circle"
+            color="red"
+          />
           <v-text-field
-            v-model="last"
-            label="Last Name"
-            outlined
-          ></v-text-field>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-form> -->
-  </div>
-
+            label="Senha"
+            :type="mostrarSenha ? 'text' : 'password'"
+            prepend-icon="mdi-lock"
+            :append-icon="mostrarSenha ? 'mdi-eye' : 'mdi-eye-off'"
+            color="red"
+            @click:append="mostrarSenha = !mostrarSenha"
+          />
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-btn class="white--text" @click="logar()" color="red">Logar</v-btn>
+          <v-spacer></v-spacer>
+          <v-btn @click="registrar()"   color="white" class="red--text">Cadastre-se</v-btn>
+        </v-card-actions>
+  
+      </v-card>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
+import Register from './Register.vue'
 export default {
-
-  data(){
-    return{
-      step: 1
-    }
+  components:{
+    Register,
   },
-  props:{
-    source: String
+  data() {
+    return {
+      mostrarSenha: false,
+      login: true
+    };
   },
-
   methods: {
-    home(){
+    registrar(){
+      this.$router.push('register')
+    },
+    logar(){
       this.$router.push('home')
     }
   }
-}
+};
 </script>
+
+<style scoped>
+
+</style>

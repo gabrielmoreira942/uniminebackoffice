@@ -1,12 +1,12 @@
 <template>
   <v-card height="1000" width="256">
-    <v-navigation-drawer v-model="drawer" :mini-variant.sync="mini" permanent>
+    <v-navigation-drawer v-model="drawer" :mini-variant.sync="mini" color="gray" permanent>
       <v-list-item class="px-2">
         <v-list-item-avatar>
-          <v-img src="..\assets\photo.jpeg"></v-img>
+          <v-img src="..\assets\robo.png"></v-img>
         </v-list-item-avatar>
 
-        <v-list-item-title>Gabriel Moreira</v-list-item-title>
+        <v-list-item-title>Unimine</v-list-item-title>
 
         <v-btn icon @click.stop="mini = !mini">
           <v-icon>mdi-chevron-left</v-icon>
@@ -36,9 +36,8 @@ export default {
     return {
       drawer: true,
       items: [
-        { title: "Home", icon: "mdi-home-city" },
-        { title: "My Account", icon: "mdi-account" },
-        { title: "Users", icon: "mdi-account-group-outline" },
+        { title: "Dashboard", icon: "mdi-view-dashboard" },
+        { title: "URLs", icon: "mdi-link" },
       ],
       mini: true,
     };
