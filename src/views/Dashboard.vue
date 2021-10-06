@@ -2,6 +2,7 @@
 </template>
 
 <script>
+//charts
   import SideBar from '../components/SideBar.vue'
   export default {
     components:{

@@ -55,7 +55,7 @@ export default {
       this.$router.push('register')
     },
     logar(){
-      this.$router.push('home')
+      this.$router.push('dashboard')
     }
   }
 };

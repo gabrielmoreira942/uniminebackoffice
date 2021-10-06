@@ -1,16 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Dashboard from '../views/Dashboard.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import Url from '../views/Url.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/home',
-    name: 'home',
-    component: Home
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard
   },
   {
     path: '/login',
@@ -23,6 +24,12 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register
+  },
+  
+  {
+    path: '/url',
+    name: 'Url',
+    component: Url
   }
 ]
 

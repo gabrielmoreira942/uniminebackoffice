@@ -13,7 +13,6 @@
           width="100"
         />
       </div>
-
       <v-spacer></v-spacer>
 
       <v-btn v-if="notIsLogin"
@@ -33,6 +32,7 @@
     <div class="sidebar" v-if="notIsLogin">
       <SideBar/>
     </div>
+     
   </v-app>
 </template>
 

@@ -16,7 +16,7 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item @click="menu(item)"  v-for="item in items" :key="item.title" link>
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -40,7 +40,18 @@ export default {
         { title: "URLs", icon: "mdi-link" },
       ],
       mini: true,
+      dashboard: false
     };
   },
+  methods: {
+    menu(event){
+      if(event.title === 'Dashboard'){
+        this.$router.push('dashboard')
+      }
+      else if(event.title === 'URLs'){
+        this.$router.push('url')
+      }
+    }
+  }
 };
 </script>
