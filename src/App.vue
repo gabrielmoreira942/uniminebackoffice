@@ -1,9 +1,8 @@
 <template  v-if="notIsLogin">
+
   <v-app>
     <v-app-bar app color="gray"  v-if="notIsLogin">
-      <div class="d-flex align-center">
-    
-
+      <v-row class="d-flex align-center">
         <v-img
           alt="Vuetify Name"
           class="shrink mt-1 hidden-sm-and-down"
@@ -12,7 +11,7 @@
           src="./assets/logo_Unimine.png"
           width="100"
         />
-      </div>
+      </v-row>
       <v-spacer></v-spacer>
 
       <v-btn v-if="notIsLogin"
@@ -27,12 +26,12 @@
     </v-app-bar>
     
     <v-main>
-      <router-view />
+     <router-view />
     </v-main>
-    <div class="sidebar" v-if="notIsLogin">
+    <v-row class="sidebar" v-if="notIsLogin">
       <SideBar/>
-    </div>
-     
+    </v-row>
+      
   </v-app>
 </template>
 
