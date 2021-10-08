@@ -1,5 +1,5 @@
 <template>
-  <v-card  height="1000" width="256">
+  <v-card>
     <v-navigation-drawer fixed v-model="drawer" color="gray" permanent style="margin-top:65px">
       <v-list-item class="px-2">
         <v-list-item-avatar>

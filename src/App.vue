@@ -1,6 +1,8 @@
-<template  v-if="notIsLogin">
-
+<template v-if="notIsLogin">
   <v-app>
+    <template class="sidebar" v-if="notIsLogin">
+      <SideBar />
+    </template>
     <v-app-bar app color="gray"  v-if="notIsLogin">
       <v-row class="d-flex align-center">
         <v-img
@@ -28,9 +30,6 @@
     <v-main>
      <router-view />
     </v-main>
-    <v-row class="sidebar" v-if="notIsLogin">
-      <SideBar/>
-    </v-row>
       
   </v-app>
 </template>
